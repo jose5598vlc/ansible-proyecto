@@ -1,0 +1,11 @@
+---
+- hosts: mikrotiks
+  connection: network_cli
+  gather_facts: no
+
+  tasks: 
+  - name: Actualizar servidor NTP para sincronizar fecha y hora
+    raw: /system ntp client set primary-ntp=91.247.175.2 
+          secondary-ntp=91.247.175.3 enabled=yes
+
+...

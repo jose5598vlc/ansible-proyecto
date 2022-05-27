@@ -1,0 +1,12 @@
+---
+- hosts: mikrotiks
+  connection: network_cli
+  gather_facts: no
+
+  tasks: 
+  - name: Crear usuario VPN y asignar IP perfil tecnico
+    raw: /ppp secret add name=prueba.ansible password=123456 
+          profie=default-encryption service=pptp local-address=10.98.99.1
+          remote-address=10.98.99.250
+
+...

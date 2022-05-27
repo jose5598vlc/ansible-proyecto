@@ -1,0 +1,13 @@
+  menu:
+    Install Packages:
+      Install Docker: yum install docker
+      Install Docker Compose: yum install docker-compose
+
+    SSH: 
+      Login: ssh %{server}
+      Commnad: ssh %{server} "%{command}"
+
+  args:
+   server:
+   - mikrotiks
+   - example.com

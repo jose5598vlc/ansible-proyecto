@@ -1,0 +1,14 @@
+---
+- hosts: mikrotiks 
+  connection: network_cli
+  gather_facts: no
+
+  tasks: 
+  - name: añadir usuario con permisos lectura
+    raw: /user add name=prueba.ansible password=123456 group=read
+  - name: deshabitar usuario de acceso
+    raw: /user disable ming
+  - name: eliminar usuario cmora
+    raw: /user remove cmora
+
+...

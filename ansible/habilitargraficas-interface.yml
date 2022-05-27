@@ -1,0 +1,13 @@
+---
+- hosts: mikrotiks
+  connection: network_cli
+  gather_facts: no
+
+  tasks: 
+  - name: Añade graficas en todas las interfaces disponibles del equipo
+    raw: /tool graphing interface add interface=all
+
+  - name: Añade graficas de los recursos del equipo
+    raw: /tool graphing resource add
+
+...
